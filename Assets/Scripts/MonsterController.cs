@@ -6,6 +6,7 @@ public class MonsterController : MonoBehaviour
 {
     public int maxHealth = 30;
     private int currentHealth;
+    public GameObject goldPrefab;
     void Start()
     {
         currentHealth = maxHealth;
@@ -21,6 +22,7 @@ public class MonsterController : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            Instantiate(goldPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

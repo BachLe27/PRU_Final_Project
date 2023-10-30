@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public int maxHealth = 500;
     private int currentHealth;
+    private int totalGold = 0;
     void Start()
     {
         currentHealth = maxHealth;
@@ -18,12 +19,22 @@ public class PlayerController : MonoBehaviour
         
     }
 
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Gold")) 
+        {           
+            totalGold++;           
+            Destroy(collider.gameObject);
         }
     }
 }
