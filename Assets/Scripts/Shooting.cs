@@ -6,6 +6,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public int bulletDamage = 15;
     Animator animator;
     public float bulletForce = 20f;
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetButtonDown("Fire1"))
+         if (Input.GetMouseButtonDown(0))
          {
             animator.SetBool("Shooting", true);
             Shoot();
@@ -36,9 +37,22 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet =  Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Ray2D ray = new Ray2D(firePoint.position, firePoint.up);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+       
+        if (hit.collider != null)
+        {
+            GameObject hitObject = hit.collider.gameObject;
+            MonsterController monster = hitObject.GetComponent<MonsterController>();
+            if (monster != null)
+            {
+                monster.TakeDamage(bulletDamage);
+            }
+        }
 
-        rb.AddForce(firePoint.up *  bulletForce, ForceMode2D.Impulse);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
+
 }
