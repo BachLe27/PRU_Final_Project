@@ -7225,11 +7225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6956721926775609672, guid: 9cbf6c05981192d44bfff136a95ac7df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6036
+      value: -27.29
       objectReference: {fileID: 0}
     - target: {fileID: 6956721926775609672, guid: 9cbf6c05981192d44bfff136a95ac7df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.4109
+      value: -15.8
       objectReference: {fileID: 0}
     - target: {fileID: 6956721926775609672, guid: 9cbf6c05981192d44bfff136a95ac7df, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7313,13 +7313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterReference:
-  - {fileID: 1918983285}
-  - {fileID: 1918983285}
-  - {fileID: 1918983285}
-  - {fileID: 1918983285}
-  - {fileID: 1918983285}
-  - {fileID: 1918983285}
-  - {fileID: 1918983285}
   - {fileID: 1918983285}
   CheckPointTime: 10
 --- !u!1 &835423638
@@ -22769,7 +22762,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2025470465}
   bulletPrefab: {fileID: 2723242277987801739, guid: b8fdd8c32afba3e488e6f5d0f940a96a, type: 3}
-  bulletDamage: 5
   bulletForce: 20
 --- !u!70 &1590178614
 CapsuleCollider2D:
@@ -22840,6 +22832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  attackDamage: 15
 --- !u!1 &1655196904
 GameObject:
   m_ObjectHideFlags: 0

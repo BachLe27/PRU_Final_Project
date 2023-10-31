@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public int maxHealth = 500;
-    private int currentHealth;
-    private int totalGold = 0;
+    public int maxHealth = 500;      // player's limit health
+    private int currentHealth;      // player's current heatlth
+    private int totalGold = 0;      //Gold to upgrade weapons in shop
+    public int attackDamage = 15;   // 
     void Start()
     {
         currentHealth = maxHealth;

@@ -26,4 +26,7 @@ public class MonsterController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+
 }

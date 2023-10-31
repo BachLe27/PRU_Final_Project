@@ -5,8 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
-    public int bulletDamage = 15;
+    public GameObject bulletPrefab;    
     Animator animator;
     public float bulletForce = 20f;
     // Start is called before the first frame update
@@ -44,9 +43,10 @@ public class Shooting : MonoBehaviour
         {
             GameObject hitObject = hit.collider.gameObject;
             MonsterController monster = hitObject.GetComponent<MonsterController>();
+            PlayerController player = new PlayerController();
             if (monster != null)
             {
-                monster.TakeDamage(bulletDamage);
+                monster.TakeDamage(player.attackDamage);
             }
         }
 
