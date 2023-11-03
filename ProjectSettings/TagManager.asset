@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawner
   - Monster
+  - Gold
   layers:
   - Default
   - TransparentFX
