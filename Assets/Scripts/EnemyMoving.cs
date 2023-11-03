@@ -6,7 +6,7 @@ public class EnemyMoving : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Transform player;
+    private Transform player;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -20,6 +20,7 @@ public class EnemyMoving : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
     }
 
