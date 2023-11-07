@@ -24,8 +24,9 @@ public class Player : MonoBehaviour
     public float bulletForce = 20f;
 
 
-    GameObject gun;
+    GameObject gun;    
     public GameObject upgradedGunPrefab;
+    public GameObject hitEffect; //player blink when take damage 
 
     void Start()
     {
@@ -124,6 +125,22 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("Shooting", false);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            MonsterController monster = new MonsterController();
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(monster.damage);
+            }
+        }
+
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.2f);       
     }
 
     public void TakeDamage(int damage)
