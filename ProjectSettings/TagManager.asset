@@ -9,6 +9,8 @@ TagManager:
   - Gold
   - Weapon
   - PlayerWeapon
+  - XP
+  - HP
   layers:
   - Default
   - TransparentFX
@@ -51,4 +53,7 @@ TagManager:
     locked: 0
   - name: Monster
     uniqueID: 2552032869
+    locked: 0
+  - name: UI
+    uniqueID: 2953144657
     locked: 0

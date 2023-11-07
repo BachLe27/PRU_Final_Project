@@ -36,4 +36,21 @@ public class Bullet : MonoBehaviour
         Destroy(effect, 0.2f);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            MonsterController monster = collision.gameObject.GetComponent<MonsterController>();
+            if (monster != null)
+            {
+                monster.TakeDamage(damage);
+            }
+        } 
+        if (!collision.gameObject.CompareTag("Monster") && !collision.gameObject.CompareTag("XP") && !collision.gameObject.CompareTag("HP"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
