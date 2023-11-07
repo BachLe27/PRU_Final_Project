@@ -8,9 +8,6 @@ public class GunController : MonoBehaviour
 
     [SerializeField]
     public Transform firePoint;
-
-    public int damage = 0;
-
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
 

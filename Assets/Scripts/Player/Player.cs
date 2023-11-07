@@ -125,4 +125,14 @@ public class Player : MonoBehaviour
             animator.SetBool("Shooting", false);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("Take Damage!");
+        health -= damage;
+        if (health < 0)
+        {
+            Destroy(gameObject);            
+        }
+    }
 }

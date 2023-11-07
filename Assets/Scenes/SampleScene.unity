@@ -25921,6 +25921,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4221429188332221104, guid: 72d0f42eaaeaa0742b409227e6595bec, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079711797818059791, guid: 72d0f42eaaeaa0742b409227e6595bec, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5256209835996104651, guid: 72d0f42eaaeaa0742b409227e6595bec, type: 3}
       propertyPath: player
       value: 

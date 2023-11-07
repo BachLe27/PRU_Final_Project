@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5017163537743419665}
   - component: {fileID: 3119301207622725802}
   m_Layer: 0
-  m_Name: Gold
-  m_TagString: Gold
+  m_Name: Exp
+  m_TagString: Exp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9622642, g: 0.9255219, b: 0.5029192, a: 1}
+  m_Color: {r: 0.20201136, g: 0.32165542, b: 0.9150943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

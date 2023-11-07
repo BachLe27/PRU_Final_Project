@@ -9,6 +9,8 @@ public class MonsterController : MonoBehaviour
     private int health = 200;
     [SerializeField]
     private int maxHealth = 200;
+    [SerializeField]
+    public int damage = 20;
     void Start()
     {
         health = maxHealth;
@@ -22,7 +24,7 @@ public class MonsterController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Take Dame!");
+        Debug.Log("Take Damage!");
         health -= damage;
         if (health < 0)
         {
