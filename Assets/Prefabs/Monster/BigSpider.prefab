@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   maxHealth: 200
+  gold: {fileID: 4432339312234718495, guid: 9cbf6c05981192d44bfff136a95ac7df, type: 3}
 --- !u!1 &1217313981785792451
 GameObject:
   m_ObjectHideFlags: 0

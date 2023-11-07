@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
@@ -9,6 +7,8 @@ public class MonsterController : MonoBehaviour
     private int health = 200;
     [SerializeField]
     private int maxHealth = 200;
+    [SerializeField]
+    private GameObject gold;
     void Start()
     {
         health = maxHealth;
@@ -17,7 +17,7 @@ public class MonsterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TakeDamage(int damage)
@@ -28,6 +28,7 @@ public class MonsterController : MonoBehaviour
         {
             Destroy(gameObject);
             int currentMonsterDestroyed = PlayerPrefs.GetInt("MonsterDeytroyed", 0);
+            Instantiate(gold, transform.position, Quaternion.identity);
             PlayerPrefs.SetInt("MonsterDeytroyed", currentMonsterDestroyed + 1);
         }
     }
