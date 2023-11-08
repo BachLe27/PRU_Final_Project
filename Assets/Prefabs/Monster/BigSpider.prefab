@@ -252,9 +252,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 200
-  maxHealth: 200
+  maxHealth: 500
   monsterDamage: 50
-  monsterExp: 50
+  monsterExp: 30
   healthBar: {fileID: 7509215552000339574}
   destroyEffect: {fileID: 391327094322044922, guid: 50ecb5f2c5e33a747a0e0b3718188280, type: 3}
 --- !u!114 &4047085243157128759

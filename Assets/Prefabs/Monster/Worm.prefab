@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7b09c383a5e184abcb5e5c91eeea05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2.5
   rotationSpeed: 2
   rotationModifier: 90
 --- !u!95 &2597116454888290347
@@ -418,7 +418,7 @@ MonoBehaviour:
   currentHealth: 200
   maxHealth: 200
   monsterDamage: 50
-  monsterExp: 50
+  monsterExp: 10
   healthBar: {fileID: 993402395852389385}
   destroyEffect: {fileID: 391327094322044922, guid: 50ecb5f2c5e33a747a0e0b3718188280, type: 3}
 --- !u!114 &-7477122572663870760

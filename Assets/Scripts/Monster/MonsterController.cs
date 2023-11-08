@@ -39,24 +39,24 @@ public class MonsterController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-
         currentHealth -= damage;
         if (healthBar != null)
         {
             healthBar.setValue(currentHealth);
         }
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
 
             // Update the "MonsterDestroyed" count for all MonsterSpawner scripts
-            MonsterSpawner[] spawners = FindObjectsOfType<MonsterSpawner>();
-            foreach (var spawner in spawners)
-            {
-                int currentMonsterDestroyed = PlayerPrefs.GetInt("MonsterDestroyed", 0);
-                PlayerPrefs.SetInt("MonsterDestroyed", currentMonsterDestroyed + 1);
-            }
-
+            //MonsterSpawner[] spawners = FindObjectsOfType<MonsterSpawner>();
+            //foreach (var spawner in spawners)
+            //{
+            //    int currentMonsterDestroyed = PlayerPrefs.GetInt("MonsterDestroyed", 0);
+            //    PlayerPrefs.SetInt("MonsterDestroyed", currentMonsterDestroyed + 1);
+            //}
+            int currentMonsterDestroyed = PlayerPrefs.GetInt("MonsterDestroyed", 0);
+            PlayerPrefs.SetInt("MonsterDestroyed", currentMonsterDestroyed + 1);
 
             GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.35f); 
