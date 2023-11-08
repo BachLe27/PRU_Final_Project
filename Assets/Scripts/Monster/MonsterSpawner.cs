@@ -15,16 +15,6 @@ public class MonsterSpawner : MonoBehaviour
     public int currentMonsterIndex = 0;
 
 
-    private int randomIndex;
-    private int randomSide;
-
-    [SerializeField]
-    private int CheckPointTime = 10;
-
-    private int totalTime = 0;
-    float time = 0;
-    bool fast = true;
-
     void Start()
     {
         StartCoroutine(SpawnMonsters());
@@ -52,6 +42,14 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator nextWave()
+    {
+        yield return new WaitForSeconds(15f);
+        PlayerPrefs.SetInt("MonsterDeytroyed", 0);
+        PlayerPrefs.SetInt("CurrentMonsterNumber", 0);
+        currentMonsterIndex += 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -63,23 +61,9 @@ public class MonsterSpawner : MonoBehaviour
             //if (currentMonsterIndex < monsterReference.Length - 1)
                 currentMonsterIndex += 1;
         }
-        time += Time.deltaTime;
-        if (time > 2)
-        {
-            time = 0;
-            totalTime += 1;
-        }
-
-        if (totalTime == CheckPointTime)
-        {
-            fast = true;
-        }
     }
 
     public void Reset()
     {
-        fast = false;
-        time = 0;
-        //Destroy(spawnedMonster);
     }
 }

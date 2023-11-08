@@ -6,14 +6,13 @@ public class GunController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField]
-    public Transform firePoint;
+    private Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
 
     void Start()
     {
-        
+        firePoint = GameObject.Find("FirePoint").transform;
     }
 
     public void Shoot()
