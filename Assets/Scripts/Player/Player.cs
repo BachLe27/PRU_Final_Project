@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
     public int currentExp = 0;
     public int currentLevel = 0;
-    private int[] expForNextLevel =
+    public int[] expForNextLevel =
     {
         100, 200, 300, 400, 500
     };
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         gun = GameObject.FindGameObjectWithTag("Weapon");
         rb = GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
@@ -96,8 +97,6 @@ public class Player : MonoBehaviour
             Vector3 gunPosition = gun.transform.position;
             Quaternion gunRotation = gun.transform.rotation;
 
-            Destroy(gun); // Destroy the current gun.
-
             // Instantiate the upgraded gun in the same position and rotation as the previous gun.
             gun = Instantiate(upgradedGunPrefab[currentLevel], gunPosition, gunRotation);
             gun.transform.parent = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
@@ -117,7 +116,6 @@ public class Player : MonoBehaviour
         if (levelUpText != null)
         {
             levelUpText.text = "Level Up!";
-           
             levelUpText.gameObject.SetActive(true);
             StartCoroutine(HideLevelUpText());
         }
@@ -143,7 +141,7 @@ public class Player : MonoBehaviour
     {
         HandleMoving();
         HandleShooting();
-        if (currentExp > expForNextLevel[currentLevel] && currentLevel < expForNextLevel.Length)
+        if (currentExp >= expForNextLevel[currentLevel] && currentLevel < expForNextLevel.Length)
         {
             LevelUp();
         }
@@ -171,6 +169,7 @@ public class Player : MonoBehaviour
     {
         currentExp += xp;
         expBar.setValue(currentExp);
+        AudioManager.Instance.PlaySFX("Shooting");
     }
 
     public void EarnHP(int hp)

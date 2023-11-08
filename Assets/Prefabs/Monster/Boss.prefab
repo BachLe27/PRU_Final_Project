@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 870822914994075448}
   - component: {fileID: 411142003195969056}
   - component: {fileID: 2183676498805267186}
+  - component: {fileID: -5437008540768477873}
+  - component: {fileID: -8633087807222835149}
+  - component: {fileID: 5526478051155786098}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Monster
@@ -34,6 +37,7 @@ Transform:
   - {fileID: 3863226322677140500}
   - {fileID: 6975006851071862350}
   - {fileID: 2798185888388493398}
+  - {fileID: 1883609864543010715}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &411142003195969056
@@ -84,6 +88,84 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5437008540768477873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150827249307560987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f660e63c11c9b74da19fbe0ffc4b2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10000
+  maxHealth: 100000
+  monsterDamage: 100
+  monsterExp: 200
+  healthBar: {fileID: 3908589102506226393}
+  destroyEffect: {fileID: 0}
+--- !u!114 &-8633087807222835149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150827249307560987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7b09c383a5e184abcb5e5c91eeea05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rotationSpeed: 20
+  rotationModifier: 90
+--- !u!61 &5526478051155786098
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150827249307560987}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17365265, y: 0.6729078}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3443222, y: 3.3877392}
+  m_EdgeRadius: 0
 --- !u!1 &2262919300487651631
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3863226322677140500}
   - component: {fileID: 7624597618616024943}
-  - component: {fileID: 8526807488505548873}
   m_Layer: 0
   m_Name: BossRightHand
   m_TagString: Untagged
@@ -157,7 +238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1742934427
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -876514146, guid: 825974beb40f22149b14d41ea060a8b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,51 +250,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8526807488505548873
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2262919300487651631}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.31, y: 2.38}
-    newSize: {x: 1.31, y: 2.38}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.31, y: 2.38}
-  m_EdgeRadius: 0
 --- !u!1 &3829002934255130349
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6975006851071862350}
   - component: {fileID: 1102906915787453189}
-  - component: {fileID: 1623090521586453298}
   - component: {fileID: 2610493853241251021}
   m_Layer: 0
   m_Name: BossLeftHand
@@ -288,7 +323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1742934427
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1776747596, guid: 825974beb40f22149b14d41ea060a8b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -300,51 +335,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1623090521586453298
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829002934255130349}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.31, y: 2.38}
-    newSize: {x: 1.31, y: 2.38}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.31, y: 2.38}
-  m_EdgeRadius: 0
 --- !u!95 &2610493853241251021
 Animator:
   serializedVersion: 5
@@ -376,7 +366,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2798185888388493398}
   - component: {fileID: 1361640719279240000}
-  - component: {fileID: 1674094112000994184}
   m_Layer: 0
   m_Name: BossBody
   m_TagString: Untagged
@@ -439,7 +428,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1742934427
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1567396609, guid: 825974beb40f22149b14d41ea060a8b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -451,48 +440,136 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1674094112000994184
-BoxCollider2D:
+--- !u!1001 &3683192731690597717
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4569781561463624602}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.05, y: 2.1}
-    newSize: {x: 2.05, y: 2.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.05, y: 2.1}
-  m_EdgeRadius: 0
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 870822914994075448}
+    m_Modifications:
+    - target: {fileID: 370224612856778636, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 870822914994075448}
+    - target: {fileID: 2593350890007619172, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593350890007619172, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.016224155
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274475884481894457, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_Name
+      value: MonsterHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923737357646914438, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923737357646914438, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+--- !u!224 &1883609864543010715 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2972016726141960910, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+  m_PrefabInstance: {fileID: 3683192731690597717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3908589102506226393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 370224612856778636, guid: 87b3f6334e3beb245979c6732b806307, type: 3}
+  m_PrefabInstance: {fileID: 3683192731690597717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c02e62192ca6a438c451b478c2c4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
