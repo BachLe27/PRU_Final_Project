@@ -24,6 +24,7 @@ public class MonsterSpawner : MonoBehaviour
     public float timeBetweenWaves = 5.0f;
     public TextMeshProUGUI waveClearText; // Reference to the UI Text element
     public TextMeshProUGUI bossIncomingText; // Reference to the UI Text element for boss announcement
+    public Image winning; // Reference to the UI winning announcement
     public GameObject bossPrefab; // Reference to the boss prefab
 
     private int currentWave = 0;
@@ -32,6 +33,7 @@ public class MonsterSpawner : MonoBehaviour
     public Transform boosSpawnPosition;
     void Start()
     {
+        winning.enabled = false;
         StartNextWave();
     }
 
@@ -50,6 +52,7 @@ public class MonsterSpawner : MonoBehaviour
             // Hide the wave clear and boss incoming text at the beginning of each wave
             waveClearText.enabled = false;
             bossIncomingText.enabled = false;
+            winning.enabled = false;
 
             // Start spawning monsters for the current wave
             StartCoroutine(SpawnWave(waves[currentWave].monsters));
@@ -61,6 +64,7 @@ public class MonsterSpawner : MonoBehaviour
         }
         else
         {
+            winning.enabled = true;
             Debug.Log("All waves and the boss round have been completed.");
         }
     }
@@ -106,6 +110,8 @@ public class MonsterSpawner : MonoBehaviour
         // Hide the wave clear text
         waveClearText.enabled = false;
 
+
+
         currentWave++;
         StartNextWave();
     }
@@ -113,7 +119,7 @@ public class MonsterSpawner : MonoBehaviour
     IEnumerator StartBossRound()
     {
         bossIncomingText.text = "Boss is coming...";
-        bossIncomingText.color = Color.red; 
+        bossIncomingText.color = Color.red;
         bossIncomingText.enabled = true;
 
         yield return new WaitForSeconds(5.0f);

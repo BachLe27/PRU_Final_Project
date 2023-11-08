@@ -1,7 +1,9 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -16,10 +18,15 @@ public class Player : MonoBehaviour
 
     public BarController healthBar;
     public BarController expBar;
-    
+
     Animator animator;
     bool takingDamage = false;
     public float damageCooldown = 1f;
+
+    public Image gameOver; // Reference to the UI winning announcement
+    public Text gameOverTxt;
+    public Button restart;
+    public Text restartTxt;
 
     public int currentExp = 0;
     public int currentLevel = 0;
@@ -27,7 +34,7 @@ public class Player : MonoBehaviour
     {
         100, 200, 300, 400, 500
     };
-    
+
     // Movement
     Rigidbody2D rb;
     public Camera cam;
@@ -50,6 +57,10 @@ public class Player : MonoBehaviour
         expBar.setMaxValue(expForNextLevel[currentLevel]);
         expBar.setValue(currentExp);
         levelUpText.gameObject.SetActive(false);
+        gameOver.enabled = false;
+        gameOverTxt.enabled = false;
+        restart.enabled = false;
+        restartTxt.enabled = false;
     }
 
 
@@ -150,7 +161,28 @@ public class Player : MonoBehaviour
             levelUpText.gameObject.transform.rotation = Camera.main.transform.rotation;
             levelUpText.gameObject.transform.position = gameObject.transform.position + new Vector3(0, 2, 0);
         }
+        if (currentHealth < 0)
+        {
+            Destroy(gameObject);
+            //make game stop
 
+            gameOver.enabled = true;
+            gameOverTxt.enabled = true;
+            restart.enabled = true;
+            restartTxt.enabled = true;
+            
+        }
+
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     private void FixedUpdate()
