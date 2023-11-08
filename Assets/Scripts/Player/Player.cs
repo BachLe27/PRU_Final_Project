@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         expBar.setValue(currentExp);
         levelUpText.gameObject.SetActive(false);
         gameOver.enabled = false;
-        gameOverTxt.enabled = false;
+        gameOverTxt.enabled = false;        
         restart.enabled = false;
         restartTxt.enabled = false;
     }
