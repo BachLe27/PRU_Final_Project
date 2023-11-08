@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public Text gameOverTxt;
     public Button restart;
     public Text restartTxt;
+    public Button exit;
+    public Text exitTxt;
 
     public int currentExp = 0;
     public int currentLevel = 0;
@@ -58,9 +60,11 @@ public class Player : MonoBehaviour
         expBar.setValue(currentExp);
         levelUpText.gameObject.SetActive(false);
         gameOver.enabled = false;
-        gameOverTxt.enabled = false;        
+        gameOverTxt.enabled = false;
         restart.enabled = false;
         restartTxt.enabled = false;
+        exit.enabled = false;
+        exitTxt.enabled = false;
     }
 
 
@@ -170,7 +174,9 @@ public class Player : MonoBehaviour
             gameOverTxt.enabled = true;
             restart.enabled = true;
             restartTxt.enabled = true;
-            
+            exit.enabled = true;
+            exitTxt.enabled = true;
+
         }
 
     }
@@ -184,6 +190,13 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    //public void SetTransparency(float transparency)
+    //{
+    //    Color color = ButtonBackground.color;
+    //    color.a = transparency;
+    //    ButtonBackground.color = color;
+    //}
 
     private void FixedUpdate()
     {

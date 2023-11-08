@@ -24136,6 +24136,8 @@ MonoBehaviour:
   gameOverTxt: {fileID: 28637226}
   restart: {fileID: 725597461}
   restartTxt: {fileID: 1258927852}
+  exit: {fileID: 377252925}
+  exitTxt: {fileID: 946651136}
   currentExp: 0
   currentLevel: 0
   expForNextLevel: 640000002c010000f401000026020000bc020000
