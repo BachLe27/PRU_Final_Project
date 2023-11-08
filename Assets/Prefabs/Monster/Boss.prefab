@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10000
-  maxHealth: 10000
+  maxHealth: 100000
   monsterDamage: 100
   monsterExp: 200
   healthBar: {fileID: 3908589102506226393}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotationSpeed: 90
+  rotationSpeed: 20
   rotationModifier: 90
 --- !u!61 &5526478051155786098
 BoxCollider2D:

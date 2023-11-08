@@ -21,7 +21,6 @@ public class LootController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(gameObject.tag);
             var player = collision.gameObject.GetComponent<Player>();
             if (gameObject.CompareTag("XP"))
             {

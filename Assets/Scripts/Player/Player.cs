@@ -97,8 +97,6 @@ public class Player : MonoBehaviour
             Vector3 gunPosition = gun.transform.position;
             Quaternion gunRotation = gun.transform.rotation;
 
-            //Destroy(gun); // Destroy the current gun.
-
             // Instantiate the upgraded gun in the same position and rotation as the previous gun.
             gun = Instantiate(upgradedGunPrefab[currentLevel], gunPosition, gunRotation);
             gun.transform.parent = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
@@ -118,7 +116,6 @@ public class Player : MonoBehaviour
         if (levelUpText != null)
         {
             levelUpText.text = "Level Up!";
-           
             levelUpText.gameObject.SetActive(true);
             StartCoroutine(HideLevelUpText());
         }
@@ -172,6 +169,7 @@ public class Player : MonoBehaviour
     {
         currentExp += xp;
         expBar.setValue(currentExp);
+        AudioManager.Instance.PlaySFX("Shooting");
     }
 
     public void EarnHP(int hp)

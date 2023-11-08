@@ -6638,7 +6638,7 @@ Transform:
   m_GameObject: {fileID: 339475668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.952835, y: -5.1596255, z: 1.0572155}
+  m_LocalPosition: {x: -6.8, y: -7.6, z: 1.0572155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7545,113 +7545,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1013463782
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1013463783}
-  - component: {fileID: 1013463785}
-  - component: {fileID: 1013463784}
-  m_Layer: 0
-  m_Name: Barrier
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1013463783
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013463782}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1702222036}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!19719996 &1013463784
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013463782}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
---- !u!1839735485 &1013463785
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013463782}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
 --- !u!1 &1106991926
 GameObject:
   m_ObjectHideFlags: 0
@@ -7763,6 +7656,8 @@ MonoBehaviour:
   - name: PlayButtonSound
     clip: {fileID: 8300000, guid: 7bfb60991d3addc4392cd768149fb7a3, type: 3}
   - name: Shooting
+    clip: {fileID: 8300000, guid: 51b1b0b88ca55e7488f77b3d3c8f128b, type: 3}
+  - name: Die
     clip: {fileID: 8300000, guid: 51b1b0b88ca55e7488f77b3d3c8f128b, type: 3}
   musicSource: {fileID: 2032330823}
   sfxSource: {fileID: 172957103}
@@ -23941,7 +23836,6 @@ Transform:
   - {fileID: 1587980436}
   - {fileID: 1710859598}
   - {fileID: 243894372}
-  - {fileID: 1013463783}
   - {fileID: 2068684828}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27548,7 +27442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[4].monsters.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[0].monsterTypes.Array.size
@@ -27725,11 +27619,19 @@ PrefabInstance:
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[4].monsters.Array.data[0].monsterType
       value: 
-      objectReference: {fileID: 7851392107711721746, guid: a06265aa3d0653541aea52c9fa5a5b40, type: 3}
+      objectReference: {fileID: 6229553754722131728, guid: 6b37dd30fb60e4b498eb239a24fb6c5d, type: 3}
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[4].monsters.Array.data[1].monsterType
       value: 
       objectReference: {fileID: 2977529362229247671, guid: 72d0f42eaaeaa0742b409227e6595bec, type: 3}
+    - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
+      propertyPath: waves.Array.data[4].monsters.Array.data[2].monsterType
+      value: 
+      objectReference: {fileID: 749155402437663281, guid: a9183ff3879ff6b4faaadf540da2660a, type: 3}
+    - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
+      propertyPath: waves.Array.data[4].monsters.Array.data[3].monsterType
+      value: 
+      objectReference: {fileID: 7851392107711721746, guid: a06265aa3d0653541aea52c9fa5a5b40, type: 3}
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[0].monsters.Array.data[0].monsterLimit
       value: 10
@@ -27772,10 +27674,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[4].monsters.Array.data[0].monsterLimit
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
       propertyPath: waves.Array.data[4].monsters.Array.data[1].monsterLimit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
+      propertyPath: waves.Array.data[4].monsters.Array.data[2].monsterLimit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718698200579824910, guid: 6ac4100a3f583684eba79c6c70b2df1a, type: 3}
+      propertyPath: waves.Array.data[4].monsters.Array.data[3].monsterLimit
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
