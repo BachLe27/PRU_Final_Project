@@ -61,10 +61,8 @@ public class Player : MonoBehaviour
         levelUpText.gameObject.SetActive(false);
         gameOver.enabled = false;
         gameOverTxt.enabled = false;
-        restart.enabled = false;
-        restartTxt.enabled = false;
-        exit.enabled = false;
-        exitTxt.enabled = false;
+        restart.gameObject.SetActive(false);
+        exit.gameObject.SetActive(false);
     }
 
 
@@ -167,15 +165,14 @@ public class Player : MonoBehaviour
         }
         if (currentHealth < 0)
         {
-            Destroy(gameObject);
+            Time.timeScale = 0;
             //make game stop
 
             gameOver.enabled = true;
             gameOverTxt.enabled = true;
-            restart.enabled = true;
-            restartTxt.enabled = true;
-            exit.enabled = true;
-            exitTxt.enabled = true;
+            restart.gameObject.SetActive(true);
+            exit.gameObject.SetActive(true);
+
 
         }
 
